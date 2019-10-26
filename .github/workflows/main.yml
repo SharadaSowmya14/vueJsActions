@@ -9,11 +9,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run frontend build
-      run: echo Frontend build!
+    - name: Run frontend sanity check
+      run: echo Frontend sanity check running!
     - name: Run npm ci
       run: npm ci
       working-directory: frontend
     - name: Run test case
       run: npm run test:unit
       working-directory: frontend
+    - name: Run backend sanity check
+      run: echo Backend sanity check running!
+    - name: Run npm ci
+      run: npm ci
+      working-directory: backend
+    - name: Run test case
+      run: npm run test
+      working-directory: backend
